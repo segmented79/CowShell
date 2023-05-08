@@ -1,0 +1,5 @@
+# This file talks about the two partners who created this repository.
+
+1. Reginald Danso <reginaldbdanso@gmail.com>
+
+2. Nutifafa Foli-Biaku <nutifafa.foli@gmail.com>
