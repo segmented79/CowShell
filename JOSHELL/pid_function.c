@@ -6,7 +6,7 @@
  * Return: 0 on success.
  */
 
-void pid_function(char **argv)
+void pid_function(char **args)
 {
 	pid_t pid;
 	int status;
@@ -18,14 +18,16 @@ void pid_function(char **argv)
 	{
 		/* Error occurred */
 		write(STDERR_FILENO, "Fork failed\n", 12);
+		free_mallocd(args);
 		exit(1);
 	}
 	else if (pid == 0)
 	{
 		/* Child process */
-		if (execvp(argv[0], argv) < 0)
+		if (execve(args[0], args, NULL) < 0)
 		{
 		write(STDERR_FILENO, "Error executing command\n", 24);
+		free_mallocd(args);
 		exit(1);
 		}
 	}

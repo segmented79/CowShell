@@ -12,7 +12,7 @@ void env_function(char **args, char **env)
 	{
 		/* If the command is "env", print the current environment */
 
-		char **env = getenv();
+		/* char **env = getenv();*/
 
 		while (*env != NULL)
 		{
@@ -21,4 +21,6 @@ void env_function(char **args, char **env)
 			env++;
 		}
 	}
+	/*free_mallocd(args);*/
+	/*exit(0);*/
 }

@@ -16,6 +16,7 @@ int exit_shell(char **args, int exit_status)
 			perror("Error");
 			exit_status = 1/* atoi(args[1]) */;
 		}
+		free_mallocd(args);
 		exit (exit_status);
 	}
 	return (0);
